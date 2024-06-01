@@ -1,4 +1,4 @@
-package com.ravi.cloud_vendor;
+package com.ravi.cloudvendor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
