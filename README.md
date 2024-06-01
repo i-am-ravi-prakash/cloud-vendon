@@ -1,2 +1,2 @@
-# cloud-vendon
+# cloud-vendor
 a spring boot application
