@@ -1,5 +1,6 @@
 package com.ravi.cloudvendor.service.impl;
 
+import com.ravi.cloudvendor.exception.CloudVendorNotFoundException;
 import com.ravi.cloudvendor.model.CloudVendor;
 import com.ravi.cloudvendor.repository.CloudVendorRepository;
 import com.ravi.cloudvendor.service.CloudVendorService;
@@ -40,6 +41,9 @@ public class CloudVendorServiceImpl implements CloudVendorService {
 
     @Override
     public CloudVendor getCloudVendor(String cloudVendorId) {
+        if(cloudVendorRepository.findById(cloudVendorId).isEmpty()){
+            throw new CloudVendorNotFoundException("Requested cloud vendor does not exist");
+        }
         return cloudVendorRepository.findById(cloudVendorId).get();
     }
 
